@@ -34,3 +34,9 @@ Assumptions made during the build, with dates. See CLAUDE.md section 14.
 - **/coverage and /races** are placeholder pages, so nav links don't 404 before Phase 2.
 - **Viper 100 result** is not claimed anywhere until the owner confirms the year/placing.
 - **@types/node bumped to ^24** (vitest 5 peer requirement; runtime is Node 26).
+
+## 2026-11-08 (Go live)
+- **Live on https://diggsultra.com.** The domain is registered through Vercel (Name.com as the underlying registrar) in the DIGGS team, with Vercel nameservers, so no DNS changes were needed. Closes open item #2.
+- `www.diggsultra.com` → 308 → `diggsultra.com`; http → https is automatic. SSL is issued by Vercel.
+- PRs #1 (Phase 0) and #2 (Phase 1) are merged to `main`, which is production.
+- `site.url` resolves to `https://diggsultra.com` through `VERCEL_PROJECT_PRODUCTION_URL`, so the admin email deep links use the real domain.
