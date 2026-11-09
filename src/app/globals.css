@@ -1,0 +1,106 @@
+@import "tailwindcss";
+
+/*
+ * DiggsUltra theme tokens. PROVISIONAL (CLAUDE.md §4).
+ * Final brand drops in by editing this block only.
+ * Desert + leather: bone paper, ink, rust accent, faded sage secondary.
+ */
+:root {
+  --paper: #f1e8d6;        /* bone / parchment background */
+  --paper-raised: #f8f2e6; /* cards, inputs */
+  --ink: #1c1712;          /* primary text, near-black */
+  --ink-muted: #5c5145;    /* secondary text */
+  --rule: #d6c8ae;         /* borders, dividers */
+  --accent: #9e3b1b;       /* rust: primary CTA */
+  --accent-ink: #fbf5ea;   /* text on accent */
+  --accent-hover: #842f14;
+  --sage: #6f7d62;         /* faded sage: secondary */
+  --focus: #9e3b1b;
+  --grain-opacity: 0.06;
+}
+
+/* Dark mode: "night ops". Follows the OS unless data-theme is set on <html>. */
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --paper: #15110d;
+    --paper-raised: #1f1a14;
+    --ink: #eee4d1;
+    --ink-muted: #ad9f88;
+    --rule: #3a3128;
+    --accent: #d2683b;
+    --accent-ink: #15110d;
+    --accent-hover: #e27c4f;
+    --sage: #95a386;
+    --focus: #e27c4f;
+    --grain-opacity: 0.08;
+  }
+}
+:root[data-theme="dark"] {
+  --paper: #15110d;
+  --paper-raised: #1f1a14;
+  --ink: #eee4d1;
+  --ink-muted: #ad9f88;
+  --rule: #3a3128;
+  --accent: #d2683b;
+  --accent-ink: #15110d;
+  --accent-hover: #e27c4f;
+  --sage: #95a386;
+  --focus: #e27c4f;
+  --grain-opacity: 0.08;
+}
+
+@theme inline {
+  --color-paper: var(--paper);
+  --color-paper-raised: var(--paper-raised);
+  --color-ink: var(--ink);
+  --color-ink-muted: var(--ink-muted);
+  --color-rule: var(--rule);
+  --color-accent: var(--accent);
+  --color-accent-ink: var(--accent-ink);
+  --color-accent-hover: var(--accent-hover);
+  --color-sage: var(--sage);
+  --font-display: var(--font-display-face);
+  --font-sans: var(--font-body-face);
+}
+
+html {
+  color-scheme: light dark;
+}
+
+body {
+  background-color: var(--paper);
+  color: var(--ink);
+  font-family: var(--font-body-face), ui-sans-serif, system-ui, sans-serif;
+}
+
+/* Subtle paper grain. Single inline SVG, no network request. */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 50;
+  opacity: var(--grain-opacity);
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+/* Letterpress feel on display headings. */
+.stamp {
+  font-family: var(--font-display-face), serif;
+  letter-spacing: 0.02em;
+  text-shadow: 0 1px 0 color-mix(in srgb, var(--paper) 60%, transparent);
+}
+
+:focus-visible {
+  outline: 2px solid var(--focus);
+  outline-offset: 3px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
