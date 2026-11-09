@@ -40,3 +40,4 @@ Assumptions made during the build, with dates. See CLAUDE.md section 14.
 - `www.diggsultra.com` → 308 → `diggsultra.com`; http → https is automatic. SSL is issued by Vercel.
 - PRs #1 (Phase 0) and #2 (Phase 1) are merged to `main`, which is production.
 - `site.url` resolves to `https://diggsultra.com` through `VERCEL_PROJECT_PRODUCTION_URL`, so the admin email deep links use the real domain.
+- **"Hype videos" renamed to "Update videos"** (owner, 2026-11-09) everywhere visitors see it. The stored option value stays `hype` so existing data keeps working.

@@ -9,7 +9,7 @@ export const site = {
   /** Owner asked for a tagline with no comparisons (2026-11-08). */
   headline: "The voice of ultra running.",
   description:
-    "Live stream commentary, hype videos, and race-day coverage for ultramarathons, from backyard loops to 200-milers.",
+    "Live stream commentary, update videos, and race-day coverage for ultramarathons, from backyard loops to 200-milers.",
   url:
     process.env.NEXT_PUBLIC_SITE_URL ??
     (process.env.VERCEL_PROJECT_PRODUCTION_URL

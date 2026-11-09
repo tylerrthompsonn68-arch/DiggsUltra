@@ -13,7 +13,7 @@ export const raceFormats = [
 
 export const services = [
   { value: "commentary", label: "Live stream commentary" },
-  { value: "hype", label: "Hype videos (pre-race)" },
+  { value: "hype", label: "Update videos" },
   { value: "coverage", label: "Live race coverage (on socials)" },
   { value: "unsure", label: "Not sure, let's talk" },
 ] as const;

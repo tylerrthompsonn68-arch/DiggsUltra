@@ -10,8 +10,8 @@ const offerings = [
     body: "I come to your race and call it live on your stream: the lead changes, the late-night grind, the finish.",
   },
   {
-    title: "Hype videos",
-    body: "Short-form videos before race day that build interest in your race and get people talking.",
+    title: "Update videos",
+    body: "Short-form videos that keep fans in the loop on your race: who to watch before, what's happening during, and how it ended.",
   },
   {
     title: "Race-day coverage",

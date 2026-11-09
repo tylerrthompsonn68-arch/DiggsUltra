@@ -6,7 +6,7 @@ import { BookForm } from "./book-form";
 export const metadata: Metadata = {
   title: "Book Diggs for Your Race",
   description:
-    "Request live stream commentary, hype videos, or race-day coverage for your ultramarathon. Quote only. Book early.",
+    "Request live stream commentary, update videos, or race-day coverage for your ultramarathon. Quote only. Book early.",
 };
 
 const terms = [
