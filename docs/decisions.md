@@ -15,3 +15,5 @@ Assumptions made during the build, with dates. See CLAUDE.md section 14.
 - **Vercel:** project `diggsultra` on team **DIGGS** (`diggs2`, Hobby), account `tylerrthompsonn68-2265`. The owner logged in to choose it, which closes open item #1. Public URL: https://diggsultra.vercel.app
 - **First deploy came from the CLI** because the Vercel GitHub app isn't installed on `tylerrthompsonn68-arch` yet. Once it's installed, run `vercel git connect` so pushes auto-deploy.
 - **Neon (free plan):** the owner approved it on 2026-11-08. Planned settings: region `iad1` (US East, matches the Vercel default function region), Neon Auth off (Auth.js handles admin login). The owner installs it from the Vercel dashboard.
+- **Neon connected** (resource `neon-green-cloud`) to production, preview, and development. Migration `0000_init` applied: all 9 tables exist. GitHub ↔ Vercel connected, so pushes now auto-deploy.
+- **drizzle.config.ts** loads `.env.local` and prefers `DATABASE_URL_UNPOOLED` for migrations.

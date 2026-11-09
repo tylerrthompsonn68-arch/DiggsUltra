@@ -13,14 +13,19 @@ Next.js 16 (App Router, TypeScript strict) · Tailwind CSS 4 · Postgres (Neon) 
 **Requirements:** Node.js 24+ (install from [nodejs.org](https://nodejs.org)) and git.
 
 ```bash
-git clone https://github.com/tylerrthompsonn68-arch/diggsultra.git
+git clone https://github.com/tylerrthompsonn68-arch/DiggsUltra.git
 cd diggsultra
 npm install
 cp .env.example .env.local   # then fill in values
 npm run dev                  # http://localhost:3000
 ```
 
-The site runs without a database in Phase 0. `DATABASE_URL` is only needed for database work.
+To get real values, link the project and pull env vars from Vercel (the Neon integration sets the database URLs):
+
+```bash
+npx vercel link --project diggsultra --scope diggs2
+npx vercel env pull .env.local
+```
 
 ## Database
 
@@ -28,7 +33,7 @@ The schema lives in `src/db/schema.ts`. Migrations are SQL files in `drizzle/` a
 
 ```bash
 npm run db:generate   # create a new migration after editing schema.ts
-npm run db:migrate    # apply migrations to DATABASE_URL
+npm run db:migrate    # apply migrations (reads .env.local)
 npm run db:studio     # browse data locally
 ```
 
