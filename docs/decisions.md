@@ -12,3 +12,6 @@ Assumptions made during the build, with dates. See CLAUDE.md section 14.
 - **Dark mode:** follows the OS by default; `data-theme="light|dark"` on `<html>` overrides it, ready for a toggle later.
 - **`booking.minLeadDays = 60`, `responseTime = "within 3 business days"`:** brief defaults, still [OPEN].
 - **AGENTS.md:** kept the Next.js-generated agent rules (`next dev` rewrites them anyway) and referenced them from CLAUDE.md.
+- **Vercel:** project `diggsultra` on team **DIGGS** (`diggs2`, Hobby), account `tylerrthompsonn68-2265`. The owner logged in to choose it, which closes open item #1. Public URL: https://diggsultra.vercel.app
+- **First deploy came from the CLI** because the Vercel GitHub app isn't installed on `tylerrthompsonn68-arch` yet. Once it's installed, run `vercel git connect` so pushes auto-deploy.
+- **Neon (free plan):** the owner approved it on 2026-11-08. Planned settings: region `iad1` (US East, matches the Vercel default function region), Neon Auth off (Auth.js handles admin login). The owner installs it from the Vercel dashboard.
