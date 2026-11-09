@@ -24,7 +24,7 @@ Assumptions made during the build, with dates. See CLAUDE.md section 14.
 - **Owner photos:** 7 web copies are in `public/images/diggs/` (max 2000px, JPEG q80). All EXIF/GPS metadata is stripped, because the originals had location data. Originals stay on the owner's Desktop and are not in the repo. Left out for now: `Strong.heic` (shirtless, which fits social media better than a race-director booking page) and `IMG_7737.MOV` (24s vertical video, 25MB; it needs compressing before it could be a hero loop).
 
 ## 2026-11-08 (Phase 1)
-- **Tagline:** "Making ultras worth watching." The owner asked for no comparison to other coverage. It's in `site.headline` (`src/config/site.ts`), with alternates in the PR description.
+- **Tagline:** "The voice of ultra running." (owner pick; first draft was "Making ultras worth watching.") The owner asked for no comparison to other coverage. It's in `site.headline` (`src/config/site.ts`), with alternates in the PR description.
 - **Admin auth:** Auth.js v5 (beta, supports Next 16), Google only, JWT sessions (no auth tables). `signIn` callback requires `email_verified` and an exact `ADMIN_EMAIL` match. `src/proxy.ts` gives an optimistic redirect; `requireAdmin()`/`assertAdmin()` enforce on every admin page and action.
 - **Graceful without keys:** no `RESEND_API_KEY` → emails are logged, not sent. No `TURNSTILE_SECRET_KEY` → the Turnstile check is skipped (honeypot + rate limit still apply). The site works end to end before those accounts exist.
 - **Rate limit:** Postgres fixed window, 5 submissions/hour per form per hashed IP (`rate_limits` table, migration 0001).

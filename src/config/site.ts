@@ -7,7 +7,7 @@ export const site = {
   name: "DiggsUltra",
   tagline: "Everything Ultra Marathon",
   /** Owner asked for a tagline with no comparisons (2026-11-08). */
-  headline: "Making ultras worth watching.",
+  headline: "The voice of ultra running.",
   description:
     "Live stream commentary, hype videos, and race-day coverage for ultramarathons, from backyard loops to 200-milers.",
   url:
