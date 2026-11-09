@@ -22,3 +22,15 @@ Assumptions made during the build, with dates. See CLAUDE.md section 14.
 - **Brand direction (owner feedback):** the full Western theme was too much. Going subtler: "DIGGS" in bold caps plus "Ultra" in a Western script. Four wordmark options are on a design canvas; the Rye/parchment provisional look will be replaced once one is picked.
 - **Brand picked:** option A+D 3 (Archivo Black + Yellowtail, A's rust palette). Replaced the Rye/parchment/grain look. Closes open item #10 for direction; a finished SVG logo is still optional.
 - **Owner photos:** 7 web copies are in `public/images/diggs/` (max 2000px, JPEG q80). All EXIF/GPS metadata is stripped, because the originals had location data. Originals stay on the owner's Desktop and are not in the repo. Left out for now: `Strong.heic` (shirtless, which fits social media better than a race-director booking page) and `IMG_7737.MOV` (24s vertical video, 25MB; it needs compressing before it could be a hero loop).
+
+## 2026-11-08 (Phase 1)
+- **Tagline:** "The voice of ultra running." (owner pick; first draft was "Making ultras worth watching.") The owner asked for no comparison to other coverage. It's in `site.headline` (`src/config/site.ts`), with alternates in the PR description.
+- **Admin auth:** Auth.js v5 (beta, supports Next 16), Google only, JWT sessions (no auth tables). `signIn` callback requires `email_verified` and an exact `ADMIN_EMAIL` match. `src/proxy.ts` gives an optimistic redirect; `requireAdmin()`/`assertAdmin()` enforce on every admin page and action.
+- **Graceful without keys:** no `RESEND_API_KEY` → emails are logged, not sent. No `TURNSTILE_SECRET_KEY` → the Turnstile check is skipped (honeypot + rate limit still apply). The site works end to end before those accounts exist.
+- **Rate limit:** Postgres fixed window, 5 submissions/hour per form per hashed IP (`rate_limits` table, migration 0001).
+- **Stats:** `getChannelStats()` uses `"use cache"` + `cacheTag("channel-stats")`, and the admin save calls `updateTag`. It falls back to the brief's Nov 2026 numbers until a snapshot is saved.
+- **Lead time "today"** is US Central on the server and the visitor's local zone in the browser. A 1-day disagreement at midnight is acceptable.
+- **Dropping a card on "Declined"** in the kanban sets no reason. The reason is picked on the detail page (keeps drag simple; decline emails are never auto-sent).
+- **/coverage and /races** are placeholder pages, so nav links don't 404 before Phase 2.
+- **Viper 100 result** is not claimed anywhere until the owner confirms the year/placing.
+- **@types/node bumped to ^24** (vitest 5 peer requirement; runtime is Node 26).

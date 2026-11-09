@@ -6,9 +6,15 @@
 export const site = {
   name: "DiggsUltra",
   tagline: "Everything Ultra Marathon",
+  /** Owner asked for a tagline with no comparisons (2026-11-08). */
+  headline: "The voice of ultra running.",
   description:
-    "Live commentary, hype videos, and on-the-ground coverage for ultramarathons. They stream your race. I make people care about it.",
-  url: process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000",
+    "Live stream commentary, hype videos, and race-day coverage for ultramarathons, from backyard loops to 200-milers.",
+  url:
+    process.env.NEXT_PUBLIC_SITE_URL ??
+    (process.env.VERCEL_PROJECT_PRODUCTION_URL
+      ? `https://${process.env.VERCEL_PROJECT_PRODUCTION_URL}`
+      : "http://localhost:3000"),
 } as const;
 
 export const socials = [

@@ -217,6 +217,15 @@ export const testimonials = pgTable("testimonials", {
   createdAt: createdAt(),
 });
 
+/** Fixed-window rate limiting for public forms. key = "<form>:<hashed ip>". */
+export const rateLimits = pgTable("rate_limits", {
+  key: text("key").primaryKey(),
+  count: integer("count").notNull().default(0),
+  windowStart: timestamp("window_start", { withTimezone: true })
+    .notNull()
+    .defaultNow(),
+});
+
 /** Email alert subscribers. scope = 'all' or an event id. */
 export const subscribers = pgTable("subscribers", {
   id: id(),
