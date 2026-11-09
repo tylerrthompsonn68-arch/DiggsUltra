@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { Wordmark } from "@/components/wordmark";
 import { site, socials } from "@/config/site";
 
 export function SiteFooter() {
@@ -6,7 +7,7 @@ export function SiteFooter() {
     <footer className="mt-16 border-t border-rule">
       <div className="mx-auto grid max-w-6xl gap-8 px-4 py-10 text-sm sm:grid-cols-3 sm:px-6">
         <div>
-          <p className="stamp text-xl">{site.name}</p>
+          <p className="text-2xl"><Wordmark /></p>
           <p className="mt-1 text-ink-muted">{site.tagline}</p>
         </div>
 

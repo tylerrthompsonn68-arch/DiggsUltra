@@ -20,3 +20,4 @@ Assumptions made during the build, with dates. See CLAUDE.md section 14.
 - **Lead time (owner-confirmed):** minimum 30 days (below that = `short_notice`), preferred 90 days (30–89 shows a soft "earlier is better" note). Closes open item #3.
 - **Response time (owner-confirmed):** no fixed promise. The confirmation email says "as soon as I can". Closes open item #4.
 - **Brand direction (owner feedback):** the full Western theme was too much. Going subtler: "DIGGS" in bold caps plus "Ultra" in a Western script. Four wordmark options are on a design canvas; the Rye/parchment provisional look will be replaced once one is picked.
+- **Brand picked:** option A+D 3 (Archivo Black + Yellowtail, A's rust palette). Replaced the Rye/parchment/grain look. Closes open item #10 for direction; a finished SVG logo is still optional.

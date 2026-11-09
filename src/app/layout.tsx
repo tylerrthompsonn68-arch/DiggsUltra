@@ -1,13 +1,20 @@
 import type { Metadata } from "next";
-import { Inter, Rye } from "next/font/google";
+import { Archivo_Black, Inter, Yellowtail } from "next/font/google";
 import { SiteFooter } from "@/components/site-footer";
 import { SiteHeader } from "@/components/site-header";
 import { site } from "@/config/site";
 import "./globals.css";
 
-// Provisional type pairing (CLAUDE.md §4). Both SIL Open Font License.
-const display = Rye({
+// Brand type (owner-picked 2026-11-08). All SIL Open Font License.
+const display = Archivo_Black({
   variable: "--font-display-face",
+  weight: "400",
+  subsets: ["latin"],
+  display: "swap",
+});
+
+const script = Yellowtail({
+  variable: "--font-script-face",
   weight: "400",
   subsets: ["latin"],
   display: "swap",
@@ -37,7 +44,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html
       lang="en"
-      className={`${display.variable} ${body.variable} h-full antialiased`}
+      className={`${display.variable} ${script.variable} ${body.variable} h-full antialiased`}
     >
       <body className="flex min-h-full flex-col">
         <a

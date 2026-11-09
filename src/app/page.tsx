@@ -8,7 +8,7 @@ export default function Home() {
       <p className="text-sm font-semibold uppercase tracking-[0.2em] text-sage">
         {site.tagline}
       </p>
-      <h1 className="stamp mt-4 max-w-3xl text-4xl leading-tight sm:text-6xl">
+      <h1 className="font-display mt-4 max-w-3xl text-4xl leading-[1.05] tracking-tight sm:text-6xl">
         They stream your race. I make people care about it.
       </h1>
       <p className="mt-6 max-w-xl text-lg text-ink-muted">

@@ -1,9 +1,11 @@
-# Design rationale (PROVISIONAL, needs owner sign-off before Phase 2)
+# Design rationale
 
-1. **Palette:** bone parchment `#f1e8d6`, ink `#1c1712`, rust accent `#9e3b1b`, faded sage `#6f7d62`. Dark "night ops" mode swaps to charred leather `#15110d` with an ember rust `#d2683b`. Desert and leather tones, deliberately not Last Soul's scheme.
-2. **Type:** Rye (wood-type, wanted-poster display) for the wordmark and headlines only. Inter for everything else. Both are SIL Open Font License (free for commercial use) and self-hosted via `next/font`.
-3. **Texture:** one inline SVG paper-grain overlay at 6–8% opacity, plus a light letterpress shadow on headings. No image textures, so there's no performance cost.
-4. **Motion:** minimal. Color transitions on hover only, and it respects `prefers-reduced-motion`. Countdowns will be the only "live" motion.
-5. **Imagery:** real race photos from Diggs's coverage, high contrast and dusty, with night shots for night-ops moments. No stock photos.
+**Status:** the owner picked wordmark option "A+D 3" on 2026-11-08 from the brand canvas (https://claude.ai/artifact/NYMFjgMGqApZaEs4CgvoPx). Owner feedback: the first pass was too Western, so this direction is a subtle Western.
 
-**Still to do:** screenshot lastsoulultra.com and bareperformancenutrition.com in a real browser for reference (CLAUDE.md §4).
+1. **Wordmark:** "DIGGS" in Archivo Black, all caps. "Ultra" in Yellowtail script, rust, tilted −7° and hooked under the end of DIGGS. It lives in `src/components/wordmark.tsx` and is sized in em, so it scales anywhere.
+2. **Palette:** warm off-white `#f5f1ea`, ink `#161412`, rust `#8a3b1f` (the "Ultra" color and main buttons), sage `#56634b` as a secondary. Dark "night ops" mode: ink background, off-white text, softer ember rust `#d2774c`.
+3. **Type:** Archivo Black for headlines, Inter for body and UI. Yellowtail appears only in the wordmark: one Western touch, used once. All three are SIL Open Font License and self-hosted via `next/font`.
+4. **Texture and motion:** none. The paper grain and letterpress effects were removed. Only hover color changes; `prefers-reduced-motion` is respected.
+5. **Imagery:** real race photos from Diggs's coverage, high contrast, with night shots for night-ops moments. No stock photos.
+
+**Still open:** a finished logo file (SVG) if the owner wants one made from this wordmark.
