@@ -26,12 +26,14 @@ export const nav = [
 
 export const bookCta = { label: "Book Diggs", href: "/book" } as const;
 
-/** Booking lead-time rules (CLAUDE.md §7). */
+/** Booking lead-time rules (CLAUDE.md §7). Owner-confirmed 2026-11-08. */
 export const booking = {
-  /** [OPEN] Owner to confirm. Below this, inquiries are flagged short_notice. */
-  minLeadDays: 60,
+  /** Below this, the inquiry is flagged short_notice and the form shows a warning. */
+  minLeadDays: 30,
+  /** Preferred notice. Between min and preferred, show a soft "earlier is better" note. */
+  preferredLeadDays: 90,
   /** Races book up to ~18 months out. Beyond this, reject. */
   maxLeadDays: 548,
-  /** [OPEN] Owner to confirm. Used in the confirmation email. */
-  responseTime: "within 3 business days",
+  /** No fixed SLA. Used in the confirmation email. */
+  responseTime: "as soon as I can",
 } as const;
