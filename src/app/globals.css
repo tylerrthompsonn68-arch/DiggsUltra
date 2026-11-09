@@ -17,6 +17,12 @@
   --accent-hover: #6e2f18;
   --sage: #56634b;         /* secondary accent */
   --focus: #8a3b1f;
+  /* Always-dark "night ops" bands, same in both themes. */
+  --night: #161412;
+  --night-ink: #f5f1ea;
+  --night-muted: #b9b0a3;
+  --night-accent: #d2774c;
+  --night-accent-hover: #e08b62;
 }
 
 /* Dark mode ("night ops"). Follows the OS unless data-theme is set on <html>. */
@@ -57,6 +63,11 @@
   --color-accent-ink: var(--accent-ink);
   --color-accent-hover: var(--accent-hover);
   --color-sage: var(--sage);
+  --color-night: var(--night);
+  --color-night-ink: var(--night-ink);
+  --color-night-muted: var(--night-muted);
+  --color-night-accent: var(--night-accent);
+  --color-night-accent-hover: var(--night-accent-hover);
   --font-display: var(--font-display-face), ui-sans-serif, sans-serif;
   --font-script: var(--font-script-face), cursive;
   --font-sans: var(--font-body-face), ui-sans-serif, system-ui, sans-serif;
