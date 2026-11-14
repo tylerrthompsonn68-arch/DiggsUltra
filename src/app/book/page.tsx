@@ -32,6 +32,8 @@ export default function BookPage() {
           alt="Diggs commentating live from the Last Soul Ultra broadcast desk"
           width={1320}
           height={752}
+          loading="eager"
+          fetchPriority="high"
           sizes="(min-width: 1024px) 22rem, 100vw"
           className="mt-8 w-full rounded-sm"
         />

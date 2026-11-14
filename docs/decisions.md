@@ -41,3 +41,10 @@ Assumptions made during the build, with dates. See CLAUDE.md section 14.
 - PRs #1 (Phase 0) and #2 (Phase 1) are merged to `main`, which is production.
 - `site.url` resolves to `https://diggsultra.com` through `VERCEL_PROJECT_PRODUCTION_URL`, so the admin email deep links use the real domain.
 - **"Hype videos" renamed to "Update videos"** (owner, 2026-11-09) everywhere visitors see it. The stored option value stays `hype` so existing data keeps working.
+
+## 2026-11-09 (SEO + sharing)
+- **Share images:** generated per page with `next/og` (home, /book, /partners). Other pages inherit the home image. Fonts are fetched from Google Fonts at render time (cached, `cacheLife("max")`), the same source as `next/font`, and fall back to the bundled font if unreachable. They render on demand rather than prebuilt; social platforms cache them.
+- **Favicon:** the default Next.js `favicon.ico` was replaced by generated `icon` / `apple-icon` (rust "D" in Archivo Black on ink).
+- **SEO:** `sitemap.xml`, `robots.txt` (blocks /admin and /api), `twitter:card=summary_large_image`, and Person JSON-LD with social profiles on the home page.
+- **LCP images** use `loading="eager"` + `fetchPriority="high"` (`priority` is deprecated in Next 16).
+- **Lighthouse (mobile, local prod build):** perf 95–98, accessibility 100, best practices 96, SEO 100 on /, /book, /partners. The only best-practices miss is the Vercel Analytics script 404, which exists only on Vercel, not locally.

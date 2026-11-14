@@ -2,7 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { buttonPrimary, buttonSecondary } from "@/components/form";
 import { ReachStrip } from "@/components/reach-strip";
-import { site } from "@/config/site";
+import { site, socials } from "@/config/site";
 
 const offerings = [
   {
@@ -21,9 +21,27 @@ const offerings = [
 
 const racesCovered = ["Last Soul Ultra", "Longhorn Last Stand"];
 
+// Structured data so search engines know who Diggs is and link the social profiles.
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Person",
+  name: "Diggs",
+  alternateName: "DiggsUltra",
+  url: site.url,
+  image: `${site.url}/images/diggs/headshot-high-desert.jpg`,
+  jobTitle: "Ultramarathon commentator and content creator",
+  description: site.description,
+  sameAs: socials.map((s) => s.href),
+};
+
 export default function Home() {
   return (
     <>
+      <script
+        type="application/ld+json"
+        // JSON.stringify output from static config; escape "<" so it can't close the tag.
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd).replace(/</g, "\\u003c") }}
+      />
       {/* Hero */}
       <section className="mx-auto grid max-w-6xl items-center gap-10 px-4 py-14 sm:px-6 md:grid-cols-[1.15fr_1fr] md:py-20">
         <div>
@@ -43,7 +61,8 @@ export default function Home() {
             alt="Diggs smiling on a high-desert trail"
             width={1500}
             height={2000}
-            priority
+            loading="eager"
+            fetchPriority="high"
             sizes="(min-width: 768px) 28rem, 100vw"
             className="aspect-[4/5] w-full rounded-sm object-cover object-top"
           />
