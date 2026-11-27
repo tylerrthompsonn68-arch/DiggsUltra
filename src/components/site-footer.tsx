@@ -27,6 +27,7 @@ export function SiteFooter() {
         <div>
           <h2 className="font-semibold uppercase tracking-wide text-ink-muted">Work with Diggs</h2>
           <ul className="mt-2 space-y-1">
+            <li><a href={`mailto:${site.email}`} className="hover:text-accent">{site.emailDisplay}</a></li>
             <li><Link href="/book" className="hover:text-accent">Book for your race</Link></li>
             <li><Link href="/partners" className="hover:text-accent">Partner / sponsor</Link></li>
             <li><Link href="/privacy" className="hover:text-accent">Privacy</Link></li>

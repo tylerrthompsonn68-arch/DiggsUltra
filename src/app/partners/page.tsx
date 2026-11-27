@@ -1,4 +1,7 @@
 import type { Metadata } from "next";
+import Link from "next/link";
+import { compact } from "@/lib/stats";
+import { lastSoul, lastSoulVideoViews } from "@/content/coverage";
 import Image from "next/image";
 import { ReachStrip } from "@/components/reach-strip";
 import { PartnerForm } from "./partner-form";
@@ -57,6 +60,10 @@ export default function PartnersPage() {
           <div>
             <h3 className="text-xs font-semibold uppercase tracking-wide text-ink-muted">Races covered</h3>
             <p className="mt-2">Last Soul Ultra · Longhorn Last Stand</p>
+            <p className="mt-1 text-sm text-ink-muted">
+              Last Soul 2026: {compact(lastSoulVideoViews)} views on my videos, plus English commentary on a stream with {compact(lastSoul.streamViews)}+ views.{" "}
+              <Link href="/coverage" className="underline hover:text-sage">Breakdown</Link>
+            </p>
           </div>
         </div>
       </section>

@@ -3,6 +3,8 @@ import Link from "next/link";
 import { buttonPrimary, buttonSecondary } from "@/components/form";
 import { ReachStrip } from "@/components/reach-strip";
 import { site, socials } from "@/config/site";
+import { lastSoul, lastSoulVideoViews } from "@/content/coverage";
+import { compact } from "@/lib/stats";
 
 const offerings = [
   {
@@ -28,6 +30,7 @@ const jsonLd = {
   name: "Diggs",
   alternateName: "DiggsUltra",
   url: site.url,
+  email: site.email,
   image: `${site.url}/images/diggs/headshot-high-desert.jpg`,
   jobTitle: "Ultramarathon commentator and content creator",
   description: site.description,
@@ -99,6 +102,19 @@ export default function Home() {
           <p className="mt-4 text-ink-muted">
             Backyard ultras run for days. I&apos;m there for all of it, from loop one to the last runner standing, calling it live
             and posting it out as it happens.
+          </p>
+          <dl className="mt-8 grid grid-cols-2 gap-6">
+            <div className="border-t-2 border-ink pt-3">
+              <dt className="text-xs font-semibold uppercase tracking-wide text-ink-muted">Views on my Last Soul videos</dt>
+              <dd className="font-display mt-1 text-4xl">{compact(lastSoulVideoViews)}</dd>
+            </div>
+            <div className="border-t-2 border-ink pt-3">
+              <dt className="text-xs font-semibold uppercase tracking-wide text-ink-muted">Views on the English stream I called</dt>
+              <dd className="font-display mt-1 text-4xl">{compact(lastSoul.streamViews)}+</dd>
+            </div>
+          </dl>
+          <p className="mt-4 text-sm">
+            <Link href="/coverage" className="font-semibold underline hover:text-sage">See the full Last Soul breakdown</Link>
           </p>
           <h3 className="mt-8 text-xs font-semibold uppercase tracking-wide text-ink-muted">Races covered</h3>
           <ul className="mt-3 flex flex-wrap gap-2">

@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Image from "next/image";
-import { booking } from "@/config/site";
+import { booking, site } from "@/config/site";
 import { BookForm } from "./book-form";
 
 export const metadata: Metadata = {
@@ -45,6 +45,10 @@ export default function BookPage() {
             </div>
           ))}
         </dl>
+        <p className="mt-8 text-sm text-ink-muted">
+          Prefer email?{" "}
+          <a href={`mailto:${site.email}`} className="font-semibold text-ink underline hover:text-accent">{site.emailDisplay}</a>
+        </p>
       </aside>
 
       <section aria-label="Booking request form" className="min-w-0">

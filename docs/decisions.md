@@ -48,3 +48,7 @@ Assumptions made during the build, with dates. See CLAUDE.md section 14.
 - **SEO:** `sitemap.xml`, `robots.txt` (blocks /admin and /api), `twitter:card=summary_large_image`, and Person JSON-LD with social profiles on the home page.
 - **LCP images** use `loading="eager"` + `fetchPriority="high"` (`priority` is deprecated in Next 16).
 - **Lighthouse (mobile, local prod build):** perf 95–98, accessibility 100, best practices 96, SEO 100 on /, /book, /partners. The only best-practices miss is the Vercel Analytics script 404, which exists only on Vercel, not locally.
+
+## 2026-11-24 — Last Soul proof on Home, Coverage, Partners
+Owner-supplied view counts for his Last Soul 2026 videos (from his Instagram/TikTok analytics): hype 388K IG + 105K TikTok; live updates 555K IG + 505K TikTok; recaps 170K IG + 125K TikTok (1,848,000 total). He was the English broadcast commentator; the English stream on rappid.'s YouTube showed 1,007,373 views and ~100 hours (read 2026-11-24). Data lives in `src/content/coverage.ts` (a stand-in until the Phase 2 events/event_stats tables). /coverage is now a Last Soul breakdown (stats, per-platform table, broadcast-desk photo, stream link) with Longhorn Last Stand (Dec 5, 2026, Dripping Springs, TX) as next up. Home proof section and Partners media kit show the two headline numbers. No competitor comparisons.
+- 2026-11-26: Added owner's address Tyler@DiggsUltra.com (site.email) to the footer, /book sidebar, /coverage, and the home page Person JSON-LD.
