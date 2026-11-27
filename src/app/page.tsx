@@ -30,6 +30,7 @@ const jsonLd = {
   name: "Diggs",
   alternateName: "DiggsUltra",
   url: site.url,
+  email: site.email,
   image: `${site.url}/images/diggs/headshot-high-desert.jpg`,
   jobTitle: "Ultramarathon commentator and content creator",
   description: site.description,

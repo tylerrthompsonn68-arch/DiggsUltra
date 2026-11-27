@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { site } from "@/config/site";
 import Image from "next/image";
 import Link from "next/link";
 import { buttonPrimary } from "@/components/form";
@@ -107,6 +108,10 @@ export default function CoveragePage() {
 
       <p className="mt-12">
         <Link href="/book" className={buttonPrimary}>Book Diggs for your race</Link>
+      </p>
+      <p className="mt-4 text-sm text-ink-muted">
+        Or email me at{" "}
+        <a href={`mailto:${site.email}`} className="font-semibold text-ink underline hover:text-accent">{site.emailDisplay}</a>
       </p>
     </article>
   );

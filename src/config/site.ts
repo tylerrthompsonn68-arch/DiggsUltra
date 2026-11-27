@@ -8,6 +8,9 @@ export const site = {
   tagline: "Everything Ultra Marathon",
   /** Owner asked for a tagline with no comparisons (2026-11-08). */
   headline: "The voice of ultra running.",
+  /** Owner's Google Workspace address (2026-11-26). Shown as written; mailto uses lowercase. */
+  email: "tyler@diggsultra.com",
+  emailDisplay: "Tyler@DiggsUltra.com",
   description:
     "Live stream commentary, update videos, and race-day coverage for ultramarathons, from backyard loops to 200-milers.",
   url:
